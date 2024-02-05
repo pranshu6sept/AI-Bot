@@ -1,0 +1,12 @@
+{
+    "json.schemas": [
+        {
+            "eslint.workingDirectories": ["./jobot-web"]
+          }
+    ],
+    "launch": {
+        
+        "configurations": [],
+        "compounds": []
+    }
+}
