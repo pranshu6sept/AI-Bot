@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import ReactMarkdown from `react-markdown`;
+import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [apiKey, setApiKey] = useState("");
@@ -77,8 +77,6 @@ export default function Home() {
         {/* Message History */}
         <div className="flex-1 overflow-y-scroll">
           <div className="mx-auto w-full max-w-screen-md p-4 ">
-            <div className="prose-lg">
-             <ReactMarkdown>{msg.content}</ReactMarkdown>
             {messages
               .filter((msg) => msg.role !== "system")
               .map((msg, idx) => (
@@ -86,10 +84,11 @@ export default function Home() {
                   <div className="font-bold">
                     {msg.role === "user" ? "You" : "Jobot"}
                   </div>
-                  <div className="text-lg">{msg.content}</div>
+                  <div className="prose-lg">
+                      <ReactMarkdown>{msg.content}</ReactMarkdown>
+                  </div>
                 </div>
               ))}
-              </div>
           </div>
         </div>
 
